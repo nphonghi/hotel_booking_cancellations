@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const bookingForm = document.getElementById("booking-form");
   const resultDiv = document.getElementById("result");
 
-  // Xử lý nút "Bắt đầu dự đoán"
   startBtn.addEventListener("click", function() {
       welcomeSection.classList.remove("animate__fadeIn");
       welcomeSection.classList.add("animate__fadeOut");
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }, { once: true });
   });
 
-  // Xử lý form dự đoán
   bookingForm.addEventListener("submit", function (e) {
       e.preventDefault();
       const form = e.target;

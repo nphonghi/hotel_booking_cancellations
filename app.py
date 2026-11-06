@@ -24,7 +24,7 @@ def predict():
     input_df = input_df.reindex(columns=FEATURES, fill_value=0)
 
     prediction = model.predict(input_df)[0]
-    result = "🔴 Đơn đặt phòng có khả năng bị hủy!" if prediction == 1 else "🟢 Đơn đặt phòng sẽ được giữ!"
+    result = "Đơn đặt phòng có khả năng bị hủy!" if prediction == 1 else "Đơn đặt phòng sẽ được giữ!"
 
     return jsonify({"result": result})
 

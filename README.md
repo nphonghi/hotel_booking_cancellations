@@ -4,33 +4,11 @@ In the hotel business, booking cancellations by customers are a common and serio
 
 The main objective of this study is to develop machine learning models capable of classifying and predicting whether a specific hotel booking will be canceled or not based on relevant booking information. Additionally, the goal is to apply these models to real-world scenarios to support practical prediction and decision-making in hotel operations.
 
-## 🔄 Project Workflow
-
-The overall workflow of this project follows a 5-step machine learning lifecycle, as illustrated below:
+## Project Workflow
 
 ![Project Workflow](images/workflow.png)
 
-## 📊 Problem Overview & Evaluation Metric
-
-In this hotel booking classification task, the **target variable** indicates whether a reservation will be **canceled** or **not**.
-
-Both types of prediction errors — **False Positives** and **False Negatives** — can cause losses for the hotel:
-
-- ❗ **False Negatives:** These are especially costly, as the hotel may **overbook** based on the incorrect assumption that some guests will cancel. If they don’t, the hotel may run out of rooms and lose potential customers.  
-  → Therefore, **minimizing FN** (i.e., **maximizing Recall**) for the *cancellation* class is **critical**.
-
-- ⚠️ **False Positives:** These occur when the model predicts a cancellation, but the guest actually shows up. This could lead to **unnecessary overbooking** and **customer dissatisfaction**.
-
-To balance both Precision and Recall, I use the **F1-score** as the primary evaluation metric.
-
-> 🎯 **Key metric**:  
-> The **F1-score of the *canceled* class** is the most important metric for evaluating model performance in this project.
-
-## 🧪 Model Development & Evaluation
-
-During the model development process, I referred to the approach of **Farzad Nekouei**, particularly for feature engineering and model evaluation. In addition to XGBoost, I also implemented several other models such as **Logistic Regression, LightGBM, and CatBoost**, as well as more modern deep learning models like **TabNet and FT-Transformer**.
-
-Despite these efforts, the **XGBoost model still delivered the best performance**, likely due to better suitability or lack of tuning in other models. Below is the comparison of model performance on the test set:
+## Evaluation
 
 | Model Name           | Accuracy | Precision | Recall | F1-score | AUC   |
 |----------------------|----------|-----------|--------|----------|--------|
@@ -43,9 +21,7 @@ Despite these efforts, the **XGBoost model still delivered the best performance*
 | TabNet               | 82.16    | 85.12     | 62.87  | 72.32    | 88.48  |
 | FT-Transformer       | 81.27    | 87.10     | 58.10  | 69.70    | 86.66  |
 
-Given these results, I have chosen to **deploy the XGBoost model** in a basic web application that allows **hotel staff or managers** to predict whether a booking is likely to be canceled based on its details.
-
-## 🚀 Demo
+## Demo
 ![Project Workflow](images/welcome.png)
 ![Project Workflow](images/demo.png)
 ![Project Workflow](images/true.png)
